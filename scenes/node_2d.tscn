@@ -42,3 +42,4 @@ script = SubResource("GDScript_rnjyy")
 
 [node name="BeatController" type="Node" parent="."]
 script = ExtResource("1_6e84v")
+audio_path = "res://assets/rock_you_like_hurricane.mp3"

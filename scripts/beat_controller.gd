@@ -2,7 +2,6 @@ extends Node
 
 signal beat
 
-@export var bpm: int = 97
 @export var audio_path: String = "res://assets/summer_days.mp3"
 var _player: AudioStreamPlayer
 var _beat_interval: float
@@ -13,6 +12,8 @@ func _ready():
 	add_child(_player)
 	_player.stream = load(audio_path)
 	_player.play()
+	
+	var bpm = _player.stream.get_bpm()
 
 	_beat_interval = 60.0 / bpm
 	_next_beat_time = _beat_interval

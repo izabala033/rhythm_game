@@ -26,3 +26,9 @@ func on_beat(beat_count: int):
 	# extra effect every 4th beat
 	if beat_count % 4 == 0:
 		print("Bar complete!")
+
+
+func _input(event):
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == Key.KEY_ESCAPE:
+			get_tree().quit()

@@ -1,11 +1,16 @@
 extends Node2D
 
 @onready var shader_mat: ShaderMaterial = $ColorRect.material
+@export var player_scene: PackedScene
 
 func _ready():
 	# pass the viewport size to shader
 	shader_mat.set_shader_parameter("viewport_size", get_viewport().size)
 	shader_mat.set_shader_parameter("beat_strength", 0.0)
+	
+	var player = player_scene.instantiate()
+	add_child(player)
+	player.position = get_viewport_rect().size / 2
 
 	# join the group so BeatController will call on_beat()
 	add_to_group("BeatReactors")

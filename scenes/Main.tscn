@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://hgauqm5hruua"]
+[gd_scene load_steps=7 format=3 uid="uid://hgauqm5hruua"]
 
 [ext_resource type="Script" uid="uid://bghim1se84vxo" path="res://scripts/beat_controller.gd" id="1_6e84v"]
 [ext_resource type="Script" uid="uid://3jfmctra5c0c" path="res://scripts/main.gd" id="1_rnjyy"]
 [ext_resource type="Shader" uid="uid://cgo41qovn0vnn" path="res://shaders/background.gdshader" id="2_4vge2"]
+[ext_resource type="PackedScene" uid="uid://c3cqjsvcp1uj7" path="res://scenes/Player.tscn" id="4_4vge2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_04qyp"]
 shader = ExtResource("2_4vge2")
@@ -43,3 +44,5 @@ script = SubResource("GDScript_rnjyy")
 [node name="BeatController" type="Node" parent="."]
 script = ExtResource("1_6e84v")
 audio_path = "res://assets/rock_you_like_hurricane.mp3"
+
+[node name="Player" parent="." instance=ExtResource("4_4vge2")]
